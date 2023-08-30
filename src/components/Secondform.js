@@ -1,5 +1,6 @@
 import React from 'react'
 import './Secondform.css'
+import Switch from './Switch.js'
 
 const Secondform = () => {
     return (
@@ -9,7 +10,7 @@ const Secondform = () => {
                 <h4>You have the option of monthly or yearly billing.</h4>
                 <form>
 
-
+                    <Switch />
                 </form>
 
             </div>
