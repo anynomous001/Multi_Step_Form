@@ -1,0 +1,40 @@
+.thirdform {
+    width: 90%;
+    margin: 1.5em auto;
+}
+
+.checkbox-label:hover {
+    cursor: pointer;
+    transform: scale(110%);
+    background-color: rgba(168, 189, 207, 0.178);
+    border-color: blueviolet;
+}
+
+
+
+.checkbox-label [type=checkbox] {
+    width: 2em;
+    height: 1.5em;
+}
+
+
+
+.checkbox-label p {
+    color: rgba(137, 43, 226, 0.596);
+
+}
+
+.checkmark h6 {
+    font-size: .7rem;
+    color: rgba(158, 153, 148, 0.801);
+}
+
+.checkbox-label {
+    display: grid;
+    grid-template-columns: 10% 60% 30%;
+    place-items: center;
+    padding: 1em 1.5em;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    transition-duration: 1s;
+}

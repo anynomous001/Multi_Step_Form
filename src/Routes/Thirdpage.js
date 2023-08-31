@@ -1,11 +1,15 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Thirdform from '../components/Thirdform'
 
 const Thirdpage = () => {
     return (
-        <><Navbar />
-            <Footer url='/Fourthpage' backurl='/Secondpage' /></>
+        <>
+            <Navbar />
+            <Thirdform />
+            <Footer url='/Fourthpage' backurl='/Secondpage' />
+        </>
     )
 }
 
