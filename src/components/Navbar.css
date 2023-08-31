@@ -18,6 +18,10 @@
     left: 25%;
 }
 
+.routes :link {
+    text-decoration: none;
+}
+
 .routes span {
     font-weight: 500;
     border: 1px solid whitesmoke;

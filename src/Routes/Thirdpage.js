@@ -1,10 +1,11 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const Thirdpage = () => {
     return (
         <><Navbar />
-            <p>Thirdpage</p></>
+            <Footer url='/Fourthpage' backurl='/Secondpage' /></>
     )
 }
 

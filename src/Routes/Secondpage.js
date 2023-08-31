@@ -6,7 +6,7 @@ const Secondpage = () => {
     return (
         < ><Navbar />
             <Secondform />
-            <Footer />
+            <Footer url='/Thirdpage' backurl='/' />
         </>
     )
 }

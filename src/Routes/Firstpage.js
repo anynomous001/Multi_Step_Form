@@ -8,7 +8,7 @@ const Firstpage = () => {
         < >
             <Navbar />
             <Firstform />
-            <Footer />
+            <Footer url='/Secondpage' />
         </>
     )
 }
