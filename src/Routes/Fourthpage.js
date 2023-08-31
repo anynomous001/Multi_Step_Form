@@ -7,7 +7,7 @@ const Fourthpage = () => {
 
         < >
             <Navbar />
-            <Footer backurl='/thirdpage' />
+            <Footer backurl='/Thirdpage' />
         </>
 
     )

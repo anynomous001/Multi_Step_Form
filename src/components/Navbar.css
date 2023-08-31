@@ -33,7 +33,7 @@
     cursor: pointer;
 }
 
-.routes span:hover {
+.active {
     background-color: #d2dce48a;
 }
 

@@ -7,9 +7,9 @@ import icon_pro from '../images/icon-pro.png'
 
 
 const Secondform = () => {
+
     const [selectedplan, setSelectedplan] = React.useState(null)
     const [toggle, setToggle] = React.useState(false)
-    const [planperiod, setPlanperiod] = React.useState('monthly')
     const handleClick = (plan) => {
         setSelectedplan(plan)
     }

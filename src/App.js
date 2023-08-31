@@ -1,30 +1,33 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { useLocation, Route, Routes } from 'react-router-dom';
 import Firstpage from './Routes/Firstpage';
 import Secondpage from './Routes/Secondpage';
 import Thirdpage from './Routes/Thirdpage';
 import Fourthpage from './Routes/Fourthpage';
 
 
-
+const CurrentpageContext = React.createContext()
 
 function App() {
 
-
+  const location = useLocation()
+  const pathname = location.pathname
   return (
 
     <div>
-
-      <Routes >
-        <Route path='/' element={<Firstpage />} />
-        <Route path='/Secondpage' element={<Secondpage />} />
-        <Route path='/Thirdpage' element={<Thirdpage />} />
-        <Route path='/Fourthpage' element={<Fourthpage />} />
-      </Routes>
-
+      <CurrentpageContext.Provider value={{ pathname }}>
+        <Routes >
+          <Route path='/' element={<Firstpage />} />
+          <Route path='/Secondpage' element={<Secondpage />} />
+          <Route path='/Thirdpage' element={<Thirdpage />} />
+          <Route path='/Fourthpage' element={<Fourthpage />} />
+        </Routes>
+      </CurrentpageContext.Provider>
     </div>
 
 
   );
 }
+
+export { CurrentpageContext }
 export default App;
