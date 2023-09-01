@@ -1,0 +1,43 @@
+.plan-name {
+    color: rgba(7, 43, 77, 0.938);
+}
+
+.change-btn {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: hsla(223, 3%, 54%, 0.637);
+
+}
+
+.billing-details {
+    width: 80%;
+    margin: 1.5em auto;
+    padding: 1em;
+    background-color: rgba(155, 182, 241, 0.192);
+    border-radius: 5px;
+}
+
+.plan-price-div,
+.add-ons-div {
+    display: flex;
+    margin: 1em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-ons-div h4 {
+    color: hsla(223, 3%, 54%, 0.637);
+}
+
+.add-ons-div span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.603);
+}
+
+.plan-price {
+    color: rgba(7, 43, 77, 0.938);
+    font-weight: 600;
+}
