@@ -21,9 +21,13 @@
 .plan-period {
     margin: 0.5em;
     font-weight: 700;
-    color: hsl(213, 92%, 24%);
+    color: hsla(214, 6%, 78%, 0.555);
 }
 
+.active {
+    color: hsl(213, 92%, 24%);
+    background-color: transparent;
+}
 
 
 

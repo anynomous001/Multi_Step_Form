@@ -12,14 +12,18 @@ const Secondform = () => {
     const [toggle, setToggle] = React.useState(false)
     const handleClick = (plan) => {
         setSelectedplan(plan)
+        console.log(selectedplan)
     }
+
+    const form = document.getElementById('form-id')
+
 
     return (
         <div className='outer-div2'>
             <div className='form-container2'>
                 <h1>Select Your Plan</h1>
                 <h4>You have the option of monthly or yearly billing.</h4>
-                <form>
+                <form id='form-id'>
                     <div className='plan-container-div'>
                         <div className={`plan-div ${selectedplan === 'arcade' ? 'selected' : ''}`} onClick={() => { handleClick('arcade') }}>
                             <img src={icon_arcade} alt='icon-arcade' />
@@ -52,9 +56,9 @@ const Secondform = () => {
                         </div>
                         <div className='switch-div'>
                             <div>
-                                <span className='plan-period'>Monthly</span>
+                                <span className={`plan-period ${toggle ? '' : 'active'}`}>Monthly</span>
                                 <Switch setToggle={setToggle} toggle={toggle} />
-                                <span className='plan-period'>Yearly</span>
+                                <span className={`plan-period ${toggle ? 'active' : ''}`}>Yearly</span>
                             </div>
 
                         </div>

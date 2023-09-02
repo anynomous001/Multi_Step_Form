@@ -4,7 +4,7 @@ import './Thirdfrom.css'
 const Thirdform = () => {
     return (
         <div className='outer-div'>
-            <div className='form-container'>
+            <div className='form-container3'>
                 <h1>Pick add-ons</h1>
                 <h4>Add-ons help enhance your gaming experience.</h4>
                 <form className='thirdform'>
