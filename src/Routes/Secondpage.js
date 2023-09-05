@@ -2,7 +2,13 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Secondform from '../components/Secondform'
+import { CurrentpageContext } from '../App'
+
+
+
+
 const Secondpage = () => {
+    const { selectedplan } = React.useContext(CurrentpageContext)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,7 +18,10 @@ const Secondpage = () => {
     };
 
     const isformvalid = () => {
-
+        if (selectedplan) {
+            return true;
+        }
+        else { return false; }
     }
 
 

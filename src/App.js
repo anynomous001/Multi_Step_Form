@@ -9,6 +9,8 @@ import Fourthpage from './Routes/Fourthpage';
 const CurrentpageContext = React.createContext()
 
 function App() {
+  const [selectedplan, setSelectedplan] = React.useState(null)
+
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -19,7 +21,7 @@ function App() {
   return (
 
     <div>
-      <CurrentpageContext.Provider value={{ pathname, formData, setFormData }}>
+      <CurrentpageContext.Provider value={{ pathname, formData, setFormData, selectedplan, setSelectedplan }}>
         <Routes >
           <Route path='/' element={<Firstpage />} />
           <Route path='/Secondpage' element={<Secondpage />} />

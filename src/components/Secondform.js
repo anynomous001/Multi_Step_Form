@@ -4,19 +4,30 @@ import Switch from './Switch.js'
 import icon_arcade from '../images/icon-arcade.png'
 import icon_advanced from '../images/icon-advanced.png'
 import icon_pro from '../images/icon-pro.png'
+import { CurrentpageContext } from '../App'
 
 
 const Secondform = () => {
 
-    const [selectedplan, setSelectedplan] = React.useState(null)
     const [toggle, setToggle] = React.useState(false)
     const [planPeriod, setPlanPeriod] = React.useState('Monthly')
+    const [price, setPrice] = React.useState('')
+
+    const { selectedplan, setSelectedplan } = React.useContext(CurrentpageContext)
+
+
     const handleClick = (plan) => {
         setSelectedplan(plan)
-        console.log(selectedplan, planPeriod)
+
+        if (plan === 'arcade') {
+            setPrice(toggle ? '$90/year' : '$9 / month');
+        } else if (plan === 'advanced') {
+            setPrice(toggle ? '$120/year' : '$12 / month');
+        } else if (plan === 'pro') {
+            setPrice(toggle ? '$150/year' : '$15 / month');
+        }
+        console.log(selectedplan, planPeriod, price)
     }
-
-
 
 
 
