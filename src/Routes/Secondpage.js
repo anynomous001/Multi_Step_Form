@@ -9,6 +9,7 @@ import { CurrentpageContext } from '../App'
 
 const Secondpage = () => {
     const { selectedplan } = React.useContext(CurrentpageContext)
+    const [error, setError] = React.useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,13 +22,16 @@ const Secondpage = () => {
         if (selectedplan) {
             return true;
         }
-        else { return false; }
+        else {
+            setError('*Select a plan')
+            return false;
+        }
     }
 
 
     return (
         < ><Navbar />
-            <Secondform />
+            <Secondform error={error} />
             <Footer backurl='/' handleSubmit={handleSubmit} isformvalid={isformvalid} />
         </>
     )

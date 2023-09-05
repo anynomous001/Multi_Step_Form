@@ -7,7 +7,7 @@ import icon_pro from '../images/icon-pro.png'
 import { CurrentpageContext } from '../App'
 
 
-const Secondform = () => {
+const Secondform = ({ error }) => {
 
     const [toggle, setToggle] = React.useState(false)
     const [planPeriod, setPlanPeriod] = React.useState('Monthly')
@@ -65,8 +65,9 @@ const Secondform = () => {
                                 <p className='price'><strong>{toggle ? '$150/year' : '$15 / month'}</strong></p>
                                 {toggle ? <p className='discount-text'>2 months free</p> : ''}
                             </div>
-
                         </div>
+                        {error && <p className='error'>{error}</p>}
+
                         <div className='switch-div'>
                             <div>
                                 <span className={`plan-period ${toggle ? '' : 'active'}`}>Monthly</span>
