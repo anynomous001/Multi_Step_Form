@@ -10,7 +10,7 @@
     left: 10%;
     width: 80%;
     background-color: aliceblue;
-    height: 55vh;
+    height: 65vh;
     padding: 1.5em;
     margin: 0 auto;
     margin-top: -4em;
@@ -29,7 +29,13 @@ form label {
 
 form input::placeholder {
     color: rgba(166, 168, 173, 0.945);
-    ;
+
+}
+
+.error {
+    margin-top: 0.2em;
+    color: red;
+    font-weight: 800;
 }
 
 form input {

@@ -9,10 +9,10 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <div className='routes'>
-                <Link to='/'> <span className={`${pathname === '/' ? 'active' : ''}`} >1</span> </Link>
-                <Link to='/Secondpage'><span className={`${pathname === '/Secondpage' ? 'active' : ''}`} >2</span> </Link>
-                <Link to='/Thirdpage'><span className={`${pathname === '/Thirdpage' ? 'active' : ''}`} >3</span> </Link>
-                <Link to='/Fourthpage'> <span className={`${pathname === '/Fourthpage' ? 'active' : ''}`} >4</span> </Link>
+                <Link to='/'> <span className={`${pathname === '/' ? 'active-page' : ''}`} >1</span> </Link>
+                <Link to='/Secondpage'><span className={`${pathname === '/Secondpage' ? 'active-page' : ''}`} >2</span> </Link>
+                <Link to='/Thirdpage'><span className={`${pathname === '/Thirdpage' ? 'active-page' : ''}`} >3</span> </Link>
+                <Link to='/Fourthpage'> <span className={`${pathname === '/Fourthpage' ? 'active-page' : ''}`} >4</span> </Link>
 
             </div>
         </div>
