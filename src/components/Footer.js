@@ -74,7 +74,7 @@ import { Link } from 'react-router-dom';
 import './Footer.css';
 import { CurrentpageContext } from '../App';
 
-const Footer = ({ url, backurl, handleSubmit }) => {
+const Footer = ({ backurl, handleSubmit }) => {
 
     const { pathname } = React.useContext(CurrentpageContext)
 

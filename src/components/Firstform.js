@@ -11,7 +11,7 @@ const Firstform = ({ submit, error, formData, setFormData }) => {
         })
 
     }
-    console.log(error)
+
 
     return (
         <div className='outer-div'>

@@ -10,6 +10,7 @@ const CurrentpageContext = React.createContext()
 
 function App() {
   const [selectedplan, setSelectedplan] = React.useState(null)
+  const [additionalPrice, setAdditionalPrice] = React.useState([]);
 
   const [formData, setFormData] = React.useState({
     name: '',
@@ -21,7 +22,7 @@ function App() {
   return (
 
     <div>
-      <CurrentpageContext.Provider value={{ pathname, formData, setFormData, selectedplan, setSelectedplan }}>
+      <CurrentpageContext.Provider value={{ pathname, formData, setFormData, selectedplan, setSelectedplan, additionalPrice, setAdditionalPrice }}>
         <Routes >
           <Route path='/' element={<Firstpage />} />
           <Route path='/Secondpage' element={<Secondpage />} />
