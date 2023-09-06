@@ -18,19 +18,23 @@ const Secondform = ({ error }) => {
     const handleClick = (plan) => {
         setSelectedplan(plan)
 
-        if (plan === 'arcade') {
+    }
+
+    React.useEffect(() => {
+
+        if (selectedplan === 'arcade') {
             setPrice(toggle ? '$90/year' : '$9 / month');
-        } else if (plan === 'advanced') {
+        } else if (selectedplan === 'advanced') {
             setPrice(toggle ? '$120/year' : '$12 / month');
-        } else if (plan === 'pro') {
+        } else if (selectedplan === 'pro') {
             setPrice(toggle ? '$150/year' : '$15 / month');
         }
         console.log(selectedplan, planPeriod, price)
-    }
 
-
+    }, [selectedplan, price])
 
     return (
+
         <div className='outer-div2'>
             <div className='form-container2'>
                 <h1>Select Your Plan</h1>

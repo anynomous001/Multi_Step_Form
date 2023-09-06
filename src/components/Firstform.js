@@ -1,17 +1,11 @@
-import React from 'react'
-import './Firstform.css'
+import React from 'react';
+import './Firstform.css';
 
 const Firstform = ({ submit, error, formData, setFormData }) => {
-
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        })
-
-    }
-
+        setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    };
 
     return (
         <div className='outer-div'>
@@ -19,8 +13,9 @@ const Firstform = ({ submit, error, formData, setFormData }) => {
                 <h1>Personal Info</h1>
                 <h4>Please provide your name, email, address, and phone number.</h4>
                 <form onSubmit={(e) => submit(e)}>
-                    <label for="name">Name</label><br />
-                    <input type="text"
+                    <label htmlFor="name">Name</label><br />
+                    <input
+                        type="text"
                         id="name"
                         placeholder='e.g. Stephen King'
                         name='name'
@@ -29,8 +24,9 @@ const Firstform = ({ submit, error, formData, setFormData }) => {
                     /><br />
                     {error.name && <p className="error">{error.name}</p>}
 
-                    <label for="email">Email Address</label><br />
-                    <input type="email"
+                    <label htmlFor="email">Email Address</label><br />
+                    <input
+                        type="email"
                         id="email"
                         placeholder='e.g. stephenking@lorem.com'
                         name='email'
@@ -39,7 +35,7 @@ const Firstform = ({ submit, error, formData, setFormData }) => {
                     /><br />
                     {error.email && <p className="error">{error.email}</p>}
 
-                    <label for="phone-number">Phone Number</label><br />
+                    <label htmlFor="phone-number">Phone Number</label><br />
                     <input
                         type="number"
                         id="phone-number"
@@ -49,11 +45,10 @@ const Firstform = ({ submit, error, formData, setFormData }) => {
                         value={formData.phone_number}
                     />
                     {error.number && <p className="error">{error.number}</p>}
-
                 </form>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Firstform
+export default Firstform;

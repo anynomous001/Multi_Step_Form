@@ -4,7 +4,6 @@ import { CurrentpageContext } from '../App'
 
 const Fourthform = () => {
     const { selectedplan, price } = React.useContext(CurrentpageContext)
-    console.log(selectedplan)
     return (
         <div className='outer-div'>
             <div className='form-container'>

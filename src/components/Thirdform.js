@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import './Thirdfrom.css'
 import { CurrentpageContext } from '../App'
 
@@ -8,10 +8,10 @@ const Thirdform = () => {
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
-        setFormData({
-            ...formData,
+        setFormData(prevFormData => ({
+            ...prevFormData,
             [name]: type === 'checkbox' ? checked : value
-        })
+        }))
 
         if (formData.online_service) {
             setAdditionalPrice([...additionalPrice, 1])
@@ -88,3 +88,100 @@ const Thirdform = () => {
 }
 
 export default Thirdform
+*/
+import React, { useContext, useEffect } from 'react';
+import './Thirdfrom.css';
+import { CurrentpageContext } from '../App';
+
+const Thirdform = () => {
+    const { formData, setFormData, additionalPrice, setAdditionalPrice } = useContext(CurrentpageContext);
+
+    // Watch for changes in formData and update additionalPrice
+    useEffect(() => {
+        // Initialize a variable to store the new additionalPrice
+        let newAdditionalPrice = [];
+
+        // Check each checkbox and add corresponding prices
+        if (formData.online_service) {
+            newAdditionalPrice.push(1);
+        }
+        if (formData.large_storage) {
+            newAdditionalPrice.push(2);
+        }
+        if (formData.customizable_profile) {
+            newAdditionalPrice.push(2);
+        }
+
+        // Update the additionalPrice state with the new values
+        setAdditionalPrice(newAdditionalPrice);
+        console.log(additionalPrice, formData.online_service)
+    }, [formData]);
+
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+
+        // Use functional updates to update formData
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: type === 'checkbox' ? checked : value,
+        }));
+    };
+
+    return (
+        <div className='outer-div'>
+            <div className='form-container3'>
+                <h1>Pick add-ons</h1>
+                <h4>Add-ons help enhance your gaming experience.</h4>
+                <form className='thirdform'>
+                    <label className='checkbox-label' for="checkbox1" >
+                        <input
+                            className='input'
+                            name='online_service'
+                            checked={formData.online_service}
+                            type="checkbox"
+                            id="checkbox1"
+                            onChange={handleChange}
+                        />
+                        <div class="checkmark">
+                            <h4 >Online Service</h4>
+                            <h6>Access to multiplayer games</h6>
+                        </div>
+                        <p>+$1/mo</p>
+                    </label>
+                    <label className='checkbox-label' for="checkbox2">
+                        <input
+                            className='input'
+                            name='large_storage'
+                            checked={formData.large_storage}
+                            type="checkbox"
+                            id="checkbox2"
+                            onChange={handleChange}
+                        />
+                        <div class="checkmark">
+                            <h4 >Large Storage</h4>
+                            <h6>Extra 1TB of cloud save</h6>
+                        </div>
+                        <p>+$2/mo</p>
+                    </label>
+                    <label className='checkbox-label' for="checkbox3">
+                        <input
+                            className='input'
+                            name='customizable_profile'
+                            type="checkbox"
+                            checked={formData.customizable_profile}
+                            id="checkbox3"
+                            onChange={handleChange}
+                        />
+                        <div class="checkmark">
+                            <h4 >Customizable Profile</h4>
+                            <h6>Custom theme on your profile </h6>
+                        </div>
+                        <p>+$2/mo</p>
+                    </label>
+                </form >
+            </div >
+        </div >
+    );
+};
+
+export default Thirdform;
