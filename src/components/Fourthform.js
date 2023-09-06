@@ -3,7 +3,7 @@ import './Fouthform.css'
 import { CurrentpageContext } from '../App'
 
 const Fourthform = () => {
-    const { selectedplan } = React.useContext(CurrentpageContext)
+    const { selectedplan, price } = React.useContext(CurrentpageContext)
     console.log(selectedplan)
     return (
         <div className='outer-div'>
@@ -16,7 +16,7 @@ const Fourthform = () => {
                             <h3 className='plan-name'>{selectedplan}</h3>
                             <p className='change-btn'>Change</p>
                         </div>
-                        <span className='plan-price'>$9/mo</span>
+                        <span className='plan-price'>{price}</span>
                     </div>
                     <hr></hr>
 

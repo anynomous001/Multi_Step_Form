@@ -11,9 +11,8 @@ const Secondform = ({ error }) => {
 
     const [toggle, setToggle] = React.useState(false)
     const [planPeriod, setPlanPeriod] = React.useState('Monthly')
-    const [price, setPrice] = React.useState('')
 
-    const { selectedplan, setSelectedplan } = React.useContext(CurrentpageContext)
+    const { selectedplan, setSelectedplan, setPrice, price } = React.useContext(CurrentpageContext)
 
 
     const handleClick = (plan) => {
